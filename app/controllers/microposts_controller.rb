@@ -1,20 +1,19 @@
-class MicropostsController < ApplicationController
-  before_action :set_micropost, only: [:show, :edit, :update, :destroy]
+# frozen_string_literal: true
 
- 
+class MicropostsController < ApplicationController
+  before_action :set_micropost, only: %i[show edit update destroy]
+
   def index
     @microposts = Micropost.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @micropost = Micropost.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @micropost = Micropost.new(micropost_params)
@@ -51,12 +50,12 @@ class MicropostsController < ApplicationController
   end
 
   private
-   
-    def set_micropost
-      @micropost = Micropost.find(params[:id])
-    end
 
-    def micropost_params
-      params.require(:micropost).permit(:content, :user_id)
-    end
+  def set_micropost
+    @micropost = Micropost.find(params[:id])
+  end
+
+  def micropost_params
+    params.require(:micropost).permit(:content, :user_id)
+  end
 end
