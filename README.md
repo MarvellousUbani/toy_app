@@ -6,3 +6,4 @@ This is our first rails project
 
 [Mike](http://github.com/MarvellousUbani)
 [Asha](http://github.com/Asha15)
+
